@@ -16,3 +16,11 @@ $(GRACE): Grace.c
 
 $(SULLY): Sully.c
 	$(CC) $(CFLAGS) -o $@ $<
+
+clean:
+	$(RM) $(NAME:=.o) Grace_kid.c Sully_*
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
