@@ -10,6 +10,11 @@ all: $(NAME)
 run: $(NAME)
 	./$(HELLO)
 
+test: $(NAME)
+	./$(COLLEEN) > tmp_Colleen.s && diff Colleen.s tmp_Colleen.s
+	./$(GRACE) && diff Grace.s Grace_kid.s
+
+
 %.o: %.s
 	nasm -f elf64 -o $@ $<
 
