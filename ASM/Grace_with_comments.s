@@ -1,4 +1,4 @@
-; This program will print its own source when run.
+; This program will write its own source to a file named Grace_kid.s
 %define NEWLINE 10
 %define DOUBLE_QUOTE 34
 %macro MAIN 0
