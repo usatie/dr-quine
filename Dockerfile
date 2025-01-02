@@ -10,9 +10,5 @@ COPY ASM ASM
 # Change the working directory
 WORKDIR /ASM
 
-# Build your executable
-RUN nasm -f elf64 -g -F DWARF hello.asm -o hello.o\
-    && ld -o hello hello.o
-
 # Default command: run the resulting program
-CMD ["./hello"]
+CMD ["bash"]
