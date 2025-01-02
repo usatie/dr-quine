@@ -1,7 +1,8 @@
 HELLO = hello
 PRINTF = printf
 COLLEEN = Colleen
-NAME = $(HELLO) $(PRINTF) $(COLLEEN)
+GRACE = Grace
+NAME = $(HELLO) $(PRINTF) $(COLLEEN) $(GRACE)
 OBJS = $(NAME:=.o)
 
 all: $(NAME)
@@ -20,6 +21,9 @@ $(PRINTF): printf.o
 	gcc -o $@ $<
 
 $(COLLEEN): Colleen.o
+	gcc -o $@ $<
+
+$(GRACE): Grace.o
 	gcc -o $@ $<
 
 clean:
