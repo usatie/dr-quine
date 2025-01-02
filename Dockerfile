@@ -1,7 +1,7 @@
 FROM amd64/debian:latest
 
 # Install NASM and Binutils (for ld)
-RUN apt-get update && apt-get install -y nasm binutils make vim
+RUN apt-get update && apt-get install -y nasm binutils make vim build-essential
 
 # Create a directory to store your assembly file
 RUN mkdir ASM
