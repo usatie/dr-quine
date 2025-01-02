@@ -26,10 +26,10 @@ $(PRINTF): printf.o
 
 # Quine
 quine.o: quine.asm
-	nasm -f elf64 -g -F DWARF -o $@ $<
+	nasm -f elf64 -o $@ $<
 
 $(QUINE): quine.o
-	ld -o $@ $<
+	gcc -o $@ $<
 
 clean:
 	$(RM) $(OBJS)
