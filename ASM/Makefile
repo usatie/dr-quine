@@ -1,7 +1,7 @@
 HELLO = hello
 PRINTF = printf
-QUINE = quine
-NAME = $(HELLO) $(PRINTF) $(QUINE)
+COLLEEN = Colleen
+NAME = $(HELLO) $(PRINTF) $(COLLEEN)
 OBJS = $(NAME:=.o)
 
 all: $(NAME)
@@ -25,10 +25,10 @@ $(PRINTF): printf.o
 	gcc -o $@ $<
 
 # Quine
-quine.o: quine.asm
+Colleen.o: Colleen.S
 	nasm -f elf64 -o $@ $<
 
-$(QUINE): quine.o
+$(COLLEEN): Colleen.o
 	gcc -o $@ $<
 
 clean:
