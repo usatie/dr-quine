@@ -2,7 +2,8 @@ HELLO = hello
 PRINTF = printf
 COLLEEN = Colleen
 GRACE = Grace
-NAME = $(HELLO) $(PRINTF) $(COLLEEN) $(GRACE)
+SULLY = Sully
+NAME = $(HELLO) $(PRINTF) $(COLLEEN) $(GRACE) $(SULLY)
 OBJS = $(NAME:=.o)
 
 all: $(NAME)
@@ -13,6 +14,10 @@ run: $(NAME)
 test: $(NAME)
 	./$(COLLEEN) > tmp_Colleen.s && diff Colleen.s tmp_Colleen.s
 	./$(GRACE) && diff Grace.s Grace_kid.s
+	./$(SULLY)
+	ls -al | grep Sully | wc -l
+	diff Sully.s Sully_5.s
+	diff Sully_3.s Sully_2.s
 
 
 %.o: %.s
@@ -29,6 +34,9 @@ $(COLLEEN): Colleen.o
 	gcc -o $@ $<
 
 $(GRACE): Grace.o
+	gcc -o $@ $<
+
+$(SULLY): Sully.o
 	gcc -o $@ $<
 
 clean:
