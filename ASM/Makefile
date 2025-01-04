@@ -40,7 +40,7 @@ $(SULLY): Sully.o
 	gcc -o $@ $<
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) Sully_*
 
 fclean: clean
 	$(RM) $(NAME)
