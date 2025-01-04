@@ -8,6 +8,14 @@ CFLAGS   = -Wall -Wextra -Werror
 
 all: $(NAME)
 
+test: $(NAME)
+	./$(COLLEEN) > tmp_Colleen.c && diff Colleen.c tmp_Colleen.c
+	./$(GRACE) && diff Grace.c Grace_kid.c
+	./$(SULLY)
+	ls -al | grep Sully | wc -l
+	diff Sully.c Sully_0.c
+	diff Sully_3.c Sully_2.c
+
 $(COLLEEN): Colleen.c
 	$(CC) $(CFLAGS) -o $@ $<
 

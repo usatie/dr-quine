@@ -16,7 +16,7 @@ test: $(NAME)
 	./$(GRACE) && diff Grace.s Grace_kid.s
 	./$(SULLY)
 	ls -al | grep Sully | wc -l
-	diff Sully.s Sully_5.s
+	diff Sully.s Sully_0.s
 	diff Sully_3.s Sully_2.s
 
 
